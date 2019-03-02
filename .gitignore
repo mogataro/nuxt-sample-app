@@ -81,8 +81,8 @@ dist
 .idea
 
 # app配下
-nuxt.config.js
-yarn.lock
-.editorconfig
-.eslintrc.js
-package.json
+# nuxt.config.js
+# yarn.lock
+# .editorconfig
+# .eslintrc.js
+# package.json
