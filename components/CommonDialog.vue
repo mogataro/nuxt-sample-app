@@ -31,7 +31,7 @@ export default {
   top: 0
   width: 100%
   &__overlay
-    background: rgba(#CCCCCC, 0.1)
+    background: rgba(black, 0.5)
     height: 100%
     left: 0
     overflow: hidden
