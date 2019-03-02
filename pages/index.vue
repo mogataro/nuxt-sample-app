@@ -11,7 +11,7 @@ section.sample
 import SampleDialog from "@/components/SampleDialog";
 
 export default {
-  name: "Sample",
+  name: "Index",
   components: {
     SampleDialog
   },
