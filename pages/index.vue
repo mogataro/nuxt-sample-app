@@ -1,42 +1,21 @@
 <template lang="pug">
-section.sample
+section.index
   Button.btn(
     type="button"
-    value="text"
-    @click="openDialog()"
-  )  ダイアログボタン
-  SampleDialog(:active="active" @cancelClicked="closeDialog()")
+    @click="$router.push('/sample/dialog')"
+  )  サンプルダイアログページへ
 </template>
 <script>
-import SampleDialog from "@/components/SampleDialog";
-
 export default {
-  name: "Index",
-  components: {
-    SampleDialog
-  },
-  data() {
-    return {
-      active: false
-    };
-  },
-  methods: {
-    openDialog() {
-      this.active = true;
-    },
-    closeDialog() {
-      this.active = false;
-    }
-  }
+  name: "Index"
 };
 </script>
 <style lang="sass" scoped>
-.sample
-  width: 100%
+.index
   .btn
     background: #DDFFFF
     border-radius: 10px
-    width: 200px
+    width: 400px
     height: 30px
     margin: 50px 0 0 30px
     box-shadow: 2px 2px 1px #88FFFF
