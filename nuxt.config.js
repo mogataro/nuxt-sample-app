@@ -1,15 +1,9 @@
 const pkg = require("./package");
-
-// Locales
 const jaMessages = require("./locales/ja");
 const enMessages = require("./locales/en");
 
 module.exports = {
   mode: "spa",
-
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     meta: [
@@ -19,22 +13,9 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
-
-  /*
-  ** Global CSS
-  */
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [],
-
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     "@nuxtjs/axios",
     [
       "nuxt-i18n",
@@ -52,11 +33,7 @@ module.exports = {
       }
     ]
   ],
-  /*
-  ** Axios module configuration
-  */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
     proxy: true,
     browserBaseURL: "http://localhost:18880",
     credentials: true,
@@ -64,16 +41,8 @@ module.exports = {
       axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
     }
   },
-
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend(config, ctx) {
-      // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: "pre",
