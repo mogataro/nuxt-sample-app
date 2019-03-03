@@ -83,6 +83,6 @@ dist
 # app配下
 # nuxt.config.js
 yarn.lock
-# .editorconfig
-# .eslintrc.js
+.editorconfig
+.eslintrc.js
 # package.json
