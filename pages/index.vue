@@ -4,11 +4,16 @@ section.index
     type="button"
     @click="$router.push('/sample/dialog')"
   )  サンプルダイアログページへ
+
+  Button.btn(
+    type="button"
+    @click="$router.push('/sample/toggle')"
+  )  サンプルトグルボタンページへ
 </template>
 <script>
 export default {
   name: "Index"
-}
+};
 </script>
 <style lang="sass" scoped>
 .index
