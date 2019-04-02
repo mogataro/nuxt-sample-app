@@ -33,6 +33,8 @@ export default {
 <style lang="sass" scoped>
 .sample-pie-graph
   width: 300px
+  margin: auto
+  padding-top: 20px
 .input-percent
   background: white
   border: 1px solid gray

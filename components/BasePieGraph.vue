@@ -38,7 +38,6 @@ export default {
   },
   computed: {
     formatTime: function() {
-      const percentLength = (30 * 3.14159 * this.percentSet) / 100;
       const timeStrings = [
         this.percentFill.toString(),
         this.percentNone.toString()
