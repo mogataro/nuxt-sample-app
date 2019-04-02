@@ -9,6 +9,11 @@ section.index
     type="button"
     @click="$router.push('/sample/toggle')"
   )  サンプルトグルボタンページへ
+
+  Button.btn(
+    type="button"
+    @click="$router.push('/sample/piegraph')"
+  )  サンプル円グラフページへ
 </template>
 <script>
 export default {
