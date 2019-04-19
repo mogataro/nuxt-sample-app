@@ -1,11 +1,18 @@
 <template lang="pug">
 div.the-header
   p.the-header-text {{pageTitle}}
+  div.the-header-side
+    TheSide
 </template>
 
 <script>
+import TheSide from "@/components/TheSide";
+
 export default {
   name: "TheHeader",
+  components: {
+    TheSide
+  },
   computed: {
     pageTitle() {
       const path = this.$route.path;
@@ -33,11 +40,16 @@ export default {
 <style lang="sass" scoped>
 .the-header
   background: black
-  padding: 16px 16px
+  height: 60px
+  display: flex
+  align-items: center
   &-text
     font-size: 30px
+    line-height: 1
+    height: 30px
     color: white
-    display: inline-block
+    margin: auto
     margin-left: 16px
-    vertical-align: middle
+  &-side
+    margin-right: 16px
 </style>
