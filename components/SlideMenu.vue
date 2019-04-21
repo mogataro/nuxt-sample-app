@@ -119,6 +119,4 @@ export default {
       width: 100%
       &:hover
         color: blue
-.base-text
-  font-size: 30px
 </style>
