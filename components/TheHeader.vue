@@ -1,8 +1,8 @@
 <template lang="pug">
 div.the-header
-  p.the-header-text {{pageTitle}}
   div.the-header-side
     TheSide
+  p.the-header-text {{pageTitle}}
 </template>
 
 <script>
@@ -48,8 +48,8 @@ export default {
     line-height: 1
     height: 30px
     color: white
-    margin: auto
+    // margin: auto
     margin-left: 16px
   &-side
-    margin-right: 16px
+    margin-left: 16px
 </style>

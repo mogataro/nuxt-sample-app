@@ -4,7 +4,9 @@ div.side
     class="side__button"
     @click="toggleMenu('toggle')"
   )
-    MenuIcon
+    MenuIcon(
+      :isActive="!isActive"
+    )
   SlideMenu(
     class="side__slide-menu"
     v-if="isActive"
