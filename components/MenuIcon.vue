@@ -30,7 +30,7 @@ export default {
 
 <style lang="sass" scoped>
 .st0
-  stroke: #ffffff
+  stroke: white
   stroke-linecap: round
   stroke-width: 5px
 </style>

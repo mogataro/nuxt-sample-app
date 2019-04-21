@@ -48,7 +48,6 @@ export default {
     line-height: 1
     height: 30px
     color: white
-    // margin: auto
     margin-left: 16px
   &-side
     margin-left: 16px

@@ -28,9 +28,6 @@ export default {
       isActive: false
     };
   },
-  mounted() {
-    // this.listen(document.body, "click", () => this.toggleMenu(false));
-  },
   methods: {
     toggleMenu(action) {
       switch (action) {
@@ -47,8 +44,6 @@ export default {
 </script>
 <style lang="sass" scoped>
 .side
-  position: relative
-  z-index: 3
   &__button
     height: 40px
     width: 40px
