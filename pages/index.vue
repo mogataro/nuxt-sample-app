@@ -10,21 +10,8 @@ div(id="app")
 <script>
 export default {
   name: "Index",
-  directives: {
-    scroll: {
-      // ディレクティブ定義
-      inserted: function(el, binding) {
-        let f = function(evt) {
-          if (binding.value(evt, el)) {
-            window.removeEventListener("scroll", f);
-          }
-        };
-        window.addEventListener("scroll", f);
-      }
-    }
-  },
   methods: {
-    handleScroll: function(evt, el) {
+    handleScroll(evt, el) {
       if (window.scrollY > 50) {
         el.setAttribute(
           "style",

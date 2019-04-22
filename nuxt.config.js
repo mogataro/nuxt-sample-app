@@ -14,7 +14,7 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
-  plugins: [],
+  plugins: ["~plugins/scroll.js"],
   modules: [
     "@nuxtjs/axios",
     [
