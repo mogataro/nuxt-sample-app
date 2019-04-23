@@ -1,5 +1,5 @@
 <template lang="pug">
-div(id="app")
+section.index
   h1(class="centered") Scroll me
   div(
     v-scroll="handleScroll"
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-#app
+.index
   height: 300vh
   background: #FFFFDD
 

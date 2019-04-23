@@ -52,6 +52,11 @@ export default {
           text: "サンプル円グラフ",
           path: "/sample/piegraph",
           active: this.$route.path === "/sample/piegraph"
+        },
+        {
+          text: "サンプルスクロール",
+          path: "/sample/scroll",
+          active: this.$route.path === "/sample/scroll"
         }
       ],
       link: [
