@@ -57,6 +57,11 @@ export default {
           text: "サンプルスクロール",
           path: "/sample/scroll",
           active: this.$route.path === "/sample/scroll"
+        },
+        {
+          text: "サンプルキャンバス",
+          path: "/sample/canvas",
+          active: this.$route.path === "/sample/canvas"
         }
       ],
       link: [
