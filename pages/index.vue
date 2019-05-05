@@ -1,19 +1,27 @@
 <template lang="pug">
 section.index
-  h1(class="centered") Scroll me
-  div(
-    v-scroll="handleScroll"
-    class="box"
-  )
+  div.box
     p {{Adress}}
+  div.btn(
+    @click="onClicked"
+  ) クリック
 </template>
 <script>
 export default {
   name: "Index",
+  data() {
+    return {
+      updateData: {
+        title: "タイトル変更",
+        body: "内容変更"
+      }
+    };
+  },
   async asyncData({ app }) {
     const ZipCode = "7830060";
     const Adress = await app.$axios.$get(
-      `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${ZipCode}`
+      // `http://zipcloud.ibsnet.co.jp/api/search?zipcode=${ZipCode}`
+      "https://mogataro.com/application/laravel-sample/api/articles/1"
     );
     return {
       Adress
@@ -23,35 +31,24 @@ export default {
     setTimeout(this.test, 1000);
   },
   methods: {
-    handleScroll(evt, el) {
-      if (window.scrollY > 50) {
-        el.setAttribute(
-          "style",
-          "opacity: 1; transform: translate3d(0, -10px, 0)"
-        );
-      }
-      return window.scrollY > 100;
-    },
     test() {
       console.log("ローディングテスト");
       console.log(this.$axios);
     },
-    async onUserDataSaveClicked() {
+    async onClicked() {
+      console.log("クリック");
       try {
-        // let Id = this.getUserId
-        // if (this.$validator.errors.items.length === 0) {
-        //   this.passwordDiff = false
-        //   let newUserData = Object.assign({}, this.userData)
-        //   newUserData.contactEmails = this.contactEmails
-        //   const { data } = await this.$axios.post(`users/${Id}`, newUserData)
-        //   this.updateUserInfo(data)
-        //   this.userSettingActive = false
-        // }
+        let Id = "1";
+        // let newUserData = Object.assign({}, this.userData)
+        const data = await this.$axios.put(
+          "https://mogataro.com/application/laravel-sample/api/articles/1",
+          this.updateData
+        );
+        console.log(data);
       } catch (e) {
         if (e.response.status === 400) {
-          this.passwordDiff = true;
+          console.log("400エラー");
         }
-        this.userSettingActive = false;
       }
     }
   }
@@ -72,7 +69,6 @@ export default {
   border: 1px solid black
   padding: 8px 20px
   line-height: 1.3em
-  opacity: 0
   color: black
   width: 500px
   margin: 0 auto
@@ -81,6 +77,14 @@ export default {
   perspective: 1000px
   backface-visibility: hidden
   background: rgba(255, 255, 255, 0.1)
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1)
 
+.btn
+  width: 80px
+  height: 40px
+  background: red
+  box-shadow: 0 2px 2px orange
+  margin: auto
+  margin-top: 30px
+  text-align: center
+  padding-top: 10px
 </style>
