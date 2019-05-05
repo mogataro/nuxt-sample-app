@@ -13,7 +13,7 @@ export default {
   async asyncData({ app }) {
     const ZipCode = "7830060";
     const Adress = await app.$axios.$get(
-      `http://zipcloud.ibsnet.co.jp/api/search?zipcode=${ZipCode}`
+      `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${ZipCode}`
     );
     return {
       Adress
