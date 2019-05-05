@@ -14,7 +14,12 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
-  plugins: ["~plugins/scroll.js"],
+  plugins: ["~plugins/scroll.js", "~/plugins/axios"],
+  // loading: "~/components/loading.vue",
+  loading: {
+    color: "blue",
+    height: "5px"
+  },
   modules: [
     "@nuxtjs/axios",
     [
@@ -35,12 +40,21 @@ module.exports = {
   ],
   axios: {
     proxy: true,
-    browserBaseURL: "http://localhost:18880",
-    credentials: true,
-    init: (axios, ctx) => {
-      axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
-    }
+    proxyHeaders: false,
+    credentials: false
+    // browserBaseURL: "http://localhost:18880",
+    // browserBaseURL: "http://zipcloud.ibsnet.co.jp/api",
+    // credentials: true,
+    // init: (axios, ctx) => {
+    //   axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
+    // }
   },
+  // proxy: {
+  //   "/api": {
+  //     target: "http://zipcloud.ibsnet.co.jp",
+  //     pathRewrite: { "^/api/": "" }
+  //   }
+  // },
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
