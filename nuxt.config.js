@@ -39,9 +39,9 @@ module.exports = {
     ]
   ],
   axios: {
-    proxy: true,
-    proxyHeaders: false,
-    credentials: false
+    proxy: true
+    // proxyHeaders: false,
+    // credentials: false
     // browserBaseURL: "http://localhost:18880",
     // browserBaseURL: "http://zipcloud.ibsnet.co.jp/api",
     // credentials: true,
