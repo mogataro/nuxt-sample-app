@@ -39,15 +39,16 @@ module.exports = {
     ]
   ],
   axios: {
-    proxy: true
+    proxy: true,
     // proxyHeaders: false,
-    // credentials: false
-    // browserBaseURL: "http://localhost:18880",
-    // browserBaseURL: "http://zipcloud.ibsnet.co.jp/api",
-    // credentials: true,
-    // init: (axios, ctx) => {
-    //   axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
-    // }
+    // credentials: false,
+    // baseURL: "http://localhost:3000",
+    // browserBaseURL: "http://127.0.0.1:8000/api",
+    browserBaseURL: "https://mogataro.com/application/laravel-sample/api",
+    credentials: true,
+    init: (axios, ctx) => {
+      axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
+    }
   },
   // proxy: {
   //   "/api": {

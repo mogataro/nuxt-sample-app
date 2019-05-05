@@ -19,10 +19,7 @@ export default {
   },
   async asyncData({ app }) {
     const ZipCode = "7830060";
-    const Adress = await app.$axios.$get(
-      // `http://zipcloud.ibsnet.co.jp/api/search?zipcode=${ZipCode}`
-      "https://mogataro.com/application/laravel-sample/api/articles/1"
-    );
+    const Adress = await app.$axios.$get("articles/1");
     return {
       Adress
     };
@@ -40,10 +37,7 @@ export default {
       try {
         let Id = "1";
         // let newUserData = Object.assign({}, this.userData)
-        const data = await this.$axios.put(
-          "https://mogataro.com/application/laravel-sample/api/articles/1",
-          this.updateData
-        );
+        const data = await this.$axios.put("articles/1", this.updateData);
         console.log(data);
       } catch (e) {
         if (e.response.status === 400) {
