@@ -62,6 +62,11 @@ export default {
           text: "サンプルキャンバス",
           path: "/sample/canvas",
           active: this.$route.path === "/sample/canvas"
+        },
+        {
+          text: "サンプルaxios",
+          path: "/sample/article",
+          active: this.$route.path === "/sample/article"
         }
       ],
       link: [

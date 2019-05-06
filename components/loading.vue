@@ -5,6 +5,7 @@
 
 <script>
 export default {
+  name: "Loading",
   data() {
     return {
       loading: false

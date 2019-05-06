@@ -39,6 +39,7 @@ export default {
 
 <style lang="sass" scoped>
 .the-header
+  width: 100vw
   background: black
   height: 60px
   display: flex

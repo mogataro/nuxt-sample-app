@@ -15,11 +15,11 @@ module.exports = {
   },
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
   plugins: ["~plugins/scroll.js", "~/plugins/axios"],
-  // loading: "~/components/loading.vue",
-  loading: {
-    color: "blue",
-    height: "5px"
-  },
+  loading: "~/components/loading.vue",
+  // loading: {
+  //   color: "blue",
+  //   height: "5px"
+  // },
   modules: [
     "@nuxtjs/axios",
     [

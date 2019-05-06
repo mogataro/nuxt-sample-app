@@ -75,8 +75,8 @@ export default {
   margin: auto
   display: table
   font-size: 60px
-  margin-top: 100px
-
+  padding-top: 100px
+  padding-bottom: 150px
 .box
   padding: 8px 20px
   line-height: 1.3
@@ -84,7 +84,6 @@ export default {
   color: black
   width: 100%
   margin: 0 auto
-  margin-top: 30px
   transform: translateZ(0)
   perspective: 1000px
   backface-visibility: hidden

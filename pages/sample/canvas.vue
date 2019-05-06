@@ -95,7 +95,7 @@ export default {
 <style lang="sass" scoped>
 .canvas
   text-align: center
-  margin-top: calc((100vh - 60px)/ 2 - 225px)
+  padding-top: calc((100vh - 60px)/ 2 - 225px)
 #cvs
   background-color: #000
   background-image: url("../../assets/img/yozora.jpg")

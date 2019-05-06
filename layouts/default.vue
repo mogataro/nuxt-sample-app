@@ -1,7 +1,7 @@
 <template lang="pug">
 div#wrap
-  TheHeader
-  nuxt
+  TheHeader.header
+  nuxt.main
 </template>
 <script>
 import TheHeader from "@/components/TheHeader";
@@ -16,4 +16,9 @@ export default {
 <style lang="sass" scoped>
 #wrap
   background: #FFFFDD
+  .header
+    position: fixed
+    top: 0
+  .main
+    margin-top: 60px
 </style>
