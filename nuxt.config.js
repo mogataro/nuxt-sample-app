@@ -3,6 +3,11 @@ const jaMessages = require("./locales/ja");
 const enMessages = require("./locales/en");
 
 require("dotenv").config();
+let env = process.env.NODE_ENV || 'development';
+let API_URL='http://localhost:3000'
+if (env === 'development' || env === 'test') {
+  API_URL=process.env.API_URL
+}
 
 module.exports = {
   mode: "spa",
@@ -41,7 +46,7 @@ module.exports = {
     proxy: true,
     // proxyHeaders: false,
     // credentials: false,
-    browserBaseURL: process.env.API_URL || "http://127.0.0.1:8000/api",
+    browserBaseURL: API_URL,
     credentials: true,
     init: (axios, ctx) => {
       axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
