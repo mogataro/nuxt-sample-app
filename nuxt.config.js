@@ -3,10 +3,10 @@ const jaMessages = require("./locales/ja");
 const enMessages = require("./locales/en");
 
 require("dotenv").config();
-let env = process.env.NODE_ENV || 'development';
-let API_URL='http://localhost:3000'
-if (env === 'development' || env === 'test') {
-  API_URL=process.env.API_URL
+let env = process.env.NODE_ENV || "development";
+let API_URL = "http://localhost:3000";
+if (env === "production") {
+  API_URL = process.env.API_URL;
 }
 
 module.exports = {
