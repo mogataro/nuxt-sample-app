@@ -1,27 +1,44 @@
 <template lang="pug">
 section.article
-  div.box
-    p {{Adress}}
-  div.btn(
-    @click="onClicked"
-  ) クリック
+  div.row
+    div.input-title
+      p タイトル
+    div.input-long
+      BaseTextbox(
+        :addClass="'art-edit'"
+        :name="'title'"
+        :value="artData.title"
+        @input="onInput($event, 'title')"
+      )
+  div.row
+    div.input-title
+      p 内容
+    div.input-long
+      BaseTextbox(
+        :addClass="'art-edit'"
+        :name="'body'"
+        :value="artData.body"
+        @input="onInput($event, 'body')"
+      )
+  div.row
+    div.input-title
+    div.input-long
+      div.btn(
+        @click="onClicked"
+      ) 修正
 </template>
 <script>
+import BaseTextbox from "@/components/BaseTextbox";
+
 export default {
   name: "Article",
-  data() {
-    return {
-      updateData: {
-        title: "タイトル変更",
-        body: "内容変更"
-      }
-    };
+  components: {
+    BaseTextbox
   },
   async asyncData({ app }) {
-    const ZipCode = "7830060";
-    const Adress = await app.$axios.$get("articles/1");
+    const artData = await app.$axios.$get("articles/1");
     return {
-      Adress
+      artData
     };
   },
   created() {
@@ -37,13 +54,29 @@ export default {
       console.log("クリック");
       try {
         let Id = "1";
-        // let newUserData = Object.assign({}, this.userData)
-        const data = await this.$axios.put("articles/1", this.updateData);
+        let newArtData = Object.assign({}, this.artData);
+        console.log(newArtData);
+        let updateData = {
+          title: newArtData.title,
+          body: newArtData.body
+        };
+        console.log(updateData);
+        const data = await this.$axios.put(`articles/${Id}`, updateData);
         console.log(data);
       } catch (e) {
         if (e.response.status === 400) {
           console.log("400エラー");
         }
+      }
+    },
+    onInput(input, item) {
+      switch (item) {
+        case "title":
+          this.artData.title = input.value;
+          break;
+        case "body":
+          this.artData.body = input.value;
+          break;
       }
     }
   }
@@ -53,33 +86,28 @@ export default {
 .article
   height: 300vh
   background: #FFFFDD
-
-.centered
-  margin: auto
-  display: table
-  font-size: 60px
-  margin-top: 100px
-
-.box
-  border: 1px solid black
-  padding: 8px 20px
-  line-height: 1.3em
-  color: black
-  width: 500px
-  margin: 0 auto
-  margin-top: 30px
-  transform: translateZ(0)
-  perspective: 1000px
-  backface-visibility: hidden
-  background: rgba(255, 255, 255, 0.1)
-
-.btn
-  width: 80px
-  height: 40px
-  background: red
-  box-shadow: 0 2px 2px orange
-  margin: auto
-  margin-top: 30px
-  text-align: center
-  padding-top: 10px
+  padding-top: 20px
+  .row
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 10px
+    .input-title
+      height: 20px
+      width: 90px
+      padding-top: 0px
+      
+    .input-long
+      height: 30px
+      width: 320px
+      .btn
+        width: 60px
+        height: 30px
+        background: skyblue
+        box-shadow: 0 2px 2px blue
+        border-radius: 4px
+        text-align: center
+        padding-top: 4px
+        float: right
+        cursor: pointer
 </style>
