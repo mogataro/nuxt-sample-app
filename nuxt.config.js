@@ -2,6 +2,8 @@ const pkg = require("./package");
 const jaMessages = require("./locales/ja");
 const enMessages = require("./locales/en");
 
+require("dotenv").config();
+
 module.exports = {
   mode: "spa",
   head: {
@@ -16,12 +18,9 @@ module.exports = {
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
   plugins: ["~plugins/scroll.js", "~/plugins/axios"],
   loading: "~/components/loading.vue",
-  // loading: {
-  //   color: "blue",
-  //   height: "5px"
-  // },
   modules: [
     "@nuxtjs/axios",
+    "@nuxtjs/dotenv",
     [
       "nuxt-i18n",
       {
@@ -42,9 +41,7 @@ module.exports = {
     proxy: true,
     // proxyHeaders: false,
     // credentials: false,
-    // baseURL: "http://localhost:3000",
-    // browserBaseURL: "http://127.0.0.1:8000/api",
-    browserBaseURL: "https://mogataro.com/application/laravel-sample/api",
+    browserBaseURL: process.env.API_URL || "http://127.0.0.1:8000/api",
     credentials: true,
     init: (axios, ctx) => {
       axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";

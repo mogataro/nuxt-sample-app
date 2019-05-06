@@ -19,6 +19,7 @@ export default {
   },
   async asyncData({ app }) {
     const ZipCode = "7830060";
+    console.log(process);
     const Adress = await app.$axios.$get("articles/1");
     return {
       Adress
