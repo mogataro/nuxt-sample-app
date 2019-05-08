@@ -50,11 +50,6 @@ export default {
           text: "サンプルaxios",
           path: "/sample/article",
           active: this.$route.path === "/sample/article"
-        },
-        {
-          text: "カラーコード変換",
-          path: "/sample/colorcode",
-          active: this.$route.path === "/sample/colorcode"
         }
       ]
     };
