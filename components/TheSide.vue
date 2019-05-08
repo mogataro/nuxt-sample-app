@@ -9,6 +9,7 @@ div.side
     )
   SlideMenu(
     class="side__slide-menu"
+    :menu="menu"
     v-if="isActive"
     @closeMenu="toggleMenu('close')"
   )
@@ -22,6 +23,14 @@ export default {
   components: {
     SlideMenu,
     MenuIcon
+  },
+  props: {
+    menu: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
   },
   data() {
     return {

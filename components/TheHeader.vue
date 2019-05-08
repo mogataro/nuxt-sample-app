@@ -1,7 +1,7 @@
 <template lang="pug">
 div.the-header
   div.the-header-side
-    TheSide
+    TheSide(:menu="menu")
   p.the-header-text {{pageTitle}}
 </template>
 
@@ -13,24 +13,62 @@ export default {
   components: {
     TheSide
   },
+  data() {
+    return {
+      menu: [
+        {
+          text: "トップページ",
+          path: "/",
+          active: this.$route.path === "/"
+        },
+        {
+          text: "サンプルダイアログ",
+          path: "/sample/dialog",
+          active: this.$route.path === "/sample/dialog"
+        },
+        {
+          text: "サンプルトグルボタン",
+          path: "/sample/toggle",
+          active: this.$route.path === "/sample/toggle"
+        },
+        {
+          text: "サンプル円グラフ",
+          path: "/sample/piegraph",
+          active: this.$route.path === "/sample/piegraph"
+        },
+        {
+          text: "サンプルスクロール",
+          path: "/sample/scroll",
+          active: this.$route.path === "/sample/scroll"
+        },
+        {
+          text: "サンプルキャンバス",
+          path: "/sample/canvas",
+          active: this.$route.path === "/sample/canvas"
+        },
+        {
+          text: "サンプルaxios",
+          path: "/sample/article",
+          active: this.$route.path === "/sample/article"
+        },
+        {
+          text: "カラーコード変換",
+          path: "/sample/colorcode",
+          active: this.$route.path === "/sample/colorcode"
+        }
+      ]
+    };
+  },
   computed: {
     pageTitle() {
       const path = this.$route.path;
       let title = "タイトル";
-      switch (path) {
-        case "/":
-          title = "トップページ";
-          break;
-        case "/sample/dialog":
-          title = "サンプルダイアログ";
-          break;
-        case "/sample/toggle":
-          title = "サンプルトグルボタン";
-          break;
-        case "/sample/piegraph":
-          title = "サンプル円グラフ";
-          break;
-      }
+      let menu = this.menu;
+      menu.forEach(function(item) {
+        if (path === item.path) {
+          title = item.text;
+        }
+      });
       return title;
     }
   }

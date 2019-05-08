@@ -30,45 +30,16 @@ transition(name="slide-menu")
 <script>
 export default {
   name: "SlideMenu",
+  props: {
+    menu: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
+  },
   data() {
     return {
-      menu: [
-        {
-          text: "トップページ",
-          path: "/",
-          active: this.$route.path === "/"
-        },
-        {
-          text: "サンプルダイアログ",
-          path: "/sample/dialog",
-          active: this.$route.path === "/sample/dialog"
-        },
-        {
-          text: "サンプルトグルボタン",
-          path: "/sample/toggle",
-          active: this.$route.path === "/sample/toggle"
-        },
-        {
-          text: "サンプル円グラフ",
-          path: "/sample/piegraph",
-          active: this.$route.path === "/sample/piegraph"
-        },
-        {
-          text: "サンプルスクロール",
-          path: "/sample/scroll",
-          active: this.$route.path === "/sample/scroll"
-        },
-        {
-          text: "サンプルキャンバス",
-          path: "/sample/canvas",
-          active: this.$route.path === "/sample/canvas"
-        },
-        {
-          text: "サンプルaxios",
-          path: "/sample/article",
-          active: this.$route.path === "/sample/article"
-        }
-      ],
       link: [
         {
           text: "My Blog",

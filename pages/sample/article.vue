@@ -43,7 +43,7 @@ export default {
   },
   created() {
     console.log(process.env);
-    setTimeout(this.test, 1000);
+    setTimeout(this.test, 10000);
   },
   methods: {
     test() {
