@@ -30,11 +30,8 @@ section.article
         @click="onClickSave"
       ) 修正
   LoadingWait(
-    :isLoading="true"
+    :isLoading="isSending"
   )
-  //- LoadingWait(
-  //-   :isLoading="isSending"
-  //- )
 </template>
 <script>
 import BaseTextbox from "@/components/BaseTextbox";
