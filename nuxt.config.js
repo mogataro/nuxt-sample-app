@@ -21,11 +21,15 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   css: ["~/assets/css/ress.css", "~/assets/css/reset.css"],
+  styleResources: {
+    sass: ["@/assets/sass/import.sass"]
+  },
   plugins: ["~plugins/scroll.js", "~/plugins/axios"],
-  loading: "~/components/loading.vue",
+  loading: "~/components/LoadingWait.vue",
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/dotenv",
+    "@nuxtjs/style-resources",
     [
       "nuxt-i18n",
       {

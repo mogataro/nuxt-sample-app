@@ -1,5 +1,8 @@
 <template lang="pug">
 section.article
+  div.article-content
+    h1 {{artData.title}}
+    p {{artData.body}}
   div.row
     div.input-title
       p タイトル
@@ -24,17 +27,27 @@ section.article
     div.input-title
     div.input-long
       div.btn(
-        @click="onClicked"
+        @click="onClickSave"
       ) 修正
+  LoadingWait(
+    :isLoading="true"
+  )
+  //- LoadingWait(
+  //-   :isLoading="isSending"
+  //- )
 </template>
 <script>
 import BaseTextbox from "@/components/BaseTextbox";
+import LoadingWait from "@/components/LoadingWait";
+import loadingWait from "@/mixins/loadingWait";
 
 export default {
   name: "Article",
   components: {
-    BaseTextbox
+    BaseTextbox,
+    LoadingWait
   },
+  mixins: [loadingWait],
   async asyncData({ app }) {
     const artData = await app.$axios.$get("articles/1");
     return {
@@ -50,7 +63,7 @@ export default {
       console.log("ローディングテスト");
       console.log(this.$axios);
     },
-    async onClicked() {
+    async onClickSaveMixin() {
       console.log("クリック");
       try {
         let Id = "1";
@@ -84,9 +97,15 @@ export default {
 </script>
 <style lang="sass" scoped>
 .article
-  height: 300vh
   background: #FFFFDD
   padding-top: 20px
+  &-content
+    width: 500px
+    margin: auto
+    background: white
+    margin-bottom: 80px
+    h1
+      margin-bottom: 20px
   .row
     display: flex
     justify-content: center

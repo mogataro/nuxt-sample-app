@@ -21,6 +21,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^5.7.0",
+    "@nuxtjs/style-resources": "^0.1.2",
     "vuedraggable": "^2.17.0"
   },
   "devDependencies": {
