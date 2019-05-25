@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="base-overlay" @click="$emit('closeModal')")
+div.base-overlay
 </template>
 <script>
 export default {
@@ -8,13 +8,12 @@ export default {
 </script>
 <style lang="sass" scoped>
 .base-overlay
-  background: #3a3b3aDD
-  height: 100%
-  left: 0
+  background: #3A3B3ADD
   overflow: hidden
   position: fixed
   top: 0
-  white-space: nowrap
+  left: 0
   width: 100%
+  height: 100%
   z-index: 1
 </style>
