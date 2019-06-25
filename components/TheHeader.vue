@@ -53,8 +53,8 @@ export default {
         },
         {
           text: "サンプルAmcharts4",
-          path: "/sample/Amcharts",
-          active: this.$route.path === "/sample/Amcharts"
+          path: "/sample/amcharts",
+          active: this.$route.path === "/sample/amcharts"
         }
       ]
     };
