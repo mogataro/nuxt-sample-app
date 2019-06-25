@@ -8,7 +8,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import sapporo_2018 from "@/static/sapporo_2018.json";
 export default {
-  name: "Amcharts4",
+  name: "Amcharts",
   data() {
     return {
       sapporo_2018
