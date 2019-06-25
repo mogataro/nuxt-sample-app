@@ -50,6 +50,11 @@ export default {
           text: "サンプルaxios",
           path: "/sample/article",
           active: this.$route.path === "/sample/article"
+        },
+        {
+          text: "サンプルAmcharts4",
+          path: "/sample/Amcharts",
+          active: this.$route.path === "/sample/Amcharts"
         }
       ]
     };
